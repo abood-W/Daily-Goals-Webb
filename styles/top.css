@@ -50,3 +50,47 @@ font-size: 16px;
     align-items: center;
     justify-content: center;
 }
+
+.card{
+    margin: 20px;
+     margin-top: 12vh;
+}
+
+.darkmode .card {
+  background-color: #1f2937;
+  color: #f8f8f8;
+}
+
+.darkmode .card-header {
+  background-color: #111827;
+  color: #f8f8f8;
+}
+
+.darkmode .list-group-item {
+  background-color: #1f2937;
+  color: #f8f8f8;
+  border-color: #374151;
+}
+
+.btn-outline-info{
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+    margin-left: 5vw;
+}
+
+.form-control{
+    border: none; 
+    margin: 0;  
+     border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0;
+}
+.darkmode .form-control{
+      background-color: #1f2937;
+  color: #f8f8f8;
+}

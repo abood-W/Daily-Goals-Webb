@@ -1,0 +1,52 @@
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-bottom:3PX ;
+	margin-bottom: 20px;
+	justify-content: space-between;
+	height:55px ;
+	display: flex;
+	flex-direction:row ;
+	background-color: white;
+	border-bottom-width:1px ;
+	border-bottom-style: solid;
+	z-index: 100;
+	border-bottom-color:rgb(200, 200, 200 ); ;
+}
+.left-section{
+	display: flex;
+	align-items: center;
+}
+.todysDate{
+    margin-left: 3vw;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.search-bar::placeholder{
+font-size: 16px;
+}
+
+.search-bar{
+    color: va;
+	border-radius: 2px;
+	font-size: 16px;
+	padding-left: 10px;
+	flex: 1;
+	height: 36px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(192,192,192);
+	box-shadow: inset 1px 2px 2px rgba(0,0,0,0.05);
+	width: 23vw;
+    margin: 8px;
+}
+
+.right-section{
+    	display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,77 @@
+body {
+  background-color: var(--base-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+  background-color: var(--header-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid var(--base-variant);
+}
+
+.search-bar {
+  padding: 8px 12px;
+  border: 1px solid var(--base-variant);
+  border-radius: 5px;
+  background-color: var(--base-variant);
+  color: var(--text-color);
+}
+
+:root {
+  --base-color: rgb(255, 255, 255);
+  --base-variant: #e8e9ed;
+  --text-color: #111528;
+  --secondary-text: #232738;
+  --primary-color: #3a435d;
+  --accent-color: #0071ff;
+  --header-color: #fdfdfd;
+}
+
+.darkmode {
+  --base-color: rgb(3, 3, 26);
+  --base-variant: #241e1e; 
+  --text-color: #f8f8f8;
+  --secondary-text: #e0d7d7;
+  --primary-color: #3a435d;
+  --accent-color: #0071ff;
+    --header-color: #060116;
+}
+
+body {
+  background-color: var(--base-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+.dark-mode-button,
+.light-mode-button {
+  color: var(--secondary-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.light-mode-button {
+  display: none; 
+}
+body.darkmode .light-mode-button {
+  display: inline;
+}
+body.darkmode .dark-mode-button {
+  display: none;
+}
+
+.dark-mode-button:focus,
+.light-mode-button:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}

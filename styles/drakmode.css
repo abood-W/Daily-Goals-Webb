@@ -75,3 +75,7 @@ body.darkmode .dark-mode-button {
   box-shadow: none;
   border: none;
 }
+
+body, .card, .form-control, .header {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -38,28 +38,42 @@ taskInput.addEventListener('keydown', (e) => {
   }
 });
 
-function addNewItem(){
-  let newItemHTML = '' ;
-  newItemHTML=
-  `
-  <ul class="list-group list-group-flush">
-         <div class="card text-bg-dark" style="width: 18rem;">
-            <div class="card-header  ">
-                todays Date
-            </div>
-            <ul class="list-group list-group-flush">
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const todayDate = new Date().toLocaleDateString('en-US', options);
+
+
+
+ let i=1  ;
+document.querySelector('.add-new-list-group').addEventListener('click', () => {
+  const cardContainer = document.querySelector('.card-container');
+  
+  
+    const today = new Date() ;
+ today.setDate(today.getDate()+i) ;
+ const day = today.toLocaleDateString('en-US', options);
+ console.log(day);
+  // Template for the card
+  const cardHTML = `
+    <div class="card text-bg-dark mb-3" style="width: 18rem;">
+      <div class="card-header">${day}</div>
+      <ul class="list-group list-group-flush">
         <li class="list-group-item d-flex justify-content-between align-items-center">
-                <input type="text" class="form-control mr-2" placeholder="Enter a task">
-                <button type="button" class="btn btn-outline-info">+</button>
-             <li class="item list-group-item"></li>
+          <input type="text" class="form-control mr-2" placeholder="Enter a task">
+          <button type="button" class="btn btn-outline-info">+</button>
         </li>
-            </ul>
+        <li class="item list-group-item"></li>
+      </ul>
+    </div>
+  `;
 
-            </div>
+  // Insert the card into the container
+  cardContainer.insertAdjacentHTML('beforeend', cardHTML);
+  i=i+1 ;
+});
 
-  `
-  document.querySelector('.new-item').innerHTML =newItemHTML ;
-}
 
-const newItemBtn = document.querySelector('.tooltip-text') ;
-newItemBtn.addEventListener(('click'),addNewItem()) ;
+
+    document.querySelector('.card-header').innerHTML  = todayDate ;
+     document.querySelector('.todysDate').innerHTML  = todayDate ;
+    
+  

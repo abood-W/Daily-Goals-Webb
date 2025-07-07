@@ -1,8 +1,10 @@
-.card{
+.card-container{
     margin: 20px;
      margin-top: 12vh;
+     display: flex;
+      flex-wrap: wrap;
+        gap: 20px;
 }
-
 .darkmode .card {
   background-color: #1f2937;
   color: #f8f8f8;
@@ -57,7 +59,11 @@
     width: 28px;
   }
 }
+.text-big-dark{
 
+  display: flex;
+
+}
 .add-new-list-group{
   border-radius: 50%;
   background-color: aqua;

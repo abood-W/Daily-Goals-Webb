@@ -1,0 +1,112 @@
+.card{
+    margin: 20px;
+     margin-top: 12vh;
+}
+
+.darkmode .card {
+  background-color: #1f2937;
+  color: #f8f8f8;
+}
+
+.darkmode .card-header {
+  background-color: #111827;
+  color: #f8f8f8;
+}
+
+.darkmode .list-group-item {
+  background-color: #1f2937;
+  color: #f8f8f8;
+  border-color: #374151;
+}
+
+.btn-outline-info{
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+    margin-left: 5vw;
+}
+
+.form-control{
+    border: none; 
+    margin: 0;  
+     border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0;
+}
+.darkmode .form-control{
+      background-color: #1f2937;
+  color: #f8f8f8;
+}
+
+@media (max-width: 480px) {
+  .todysDate {
+    font-size: 12px;
+  }
+
+  .search-bar {
+    font-size: 14px;
+  }
+
+  .btn-outline-info {
+    font-size: 14px;
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.add-new-list-group{
+  border-radius: 50%;
+  background-color: aqua;
+  color: black;
+  position: fixed;
+      bottom: 20px;       
+      right: 20px;     
+       width: 45px;
+  height: 45px;
+  font-size: 30px;
+  font-weight: 100;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.add-new-list-group {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 24px;
+  padding: 0;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+bottom: 50px;
+right: 3px;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.button-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+

@@ -37,3 +37,29 @@ taskInput.addEventListener('keydown', (e) => {
     addTask();
   }
 });
+
+function addNewItem(){
+  let newItemHTML = '' ;
+  newItemHTML=
+  `
+  <ul class="list-group list-group-flush">
+         <div class="card text-bg-dark" style="width: 18rem;">
+            <div class="card-header  ">
+                todays Date
+            </div>
+            <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+                <input type="text" class="form-control mr-2" placeholder="Enter a task">
+                <button type="button" class="btn btn-outline-info">+</button>
+             <li class="item list-group-item"></li>
+        </li>
+            </ul>
+
+            </div>
+
+  `
+  document.querySelector('.new-item').innerHTML =newItemHTML ;
+}
+
+const newItemBtn = document.querySelector('.tooltip-text') ;
+newItemBtn.addEventListener(('click'),addNewItem()) ;

@@ -12,47 +12,103 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-let addNewTaskHTML = '' ;
-const taskInput = document.querySelector('.mr-2');
-const btn = document.querySelector('.btn-outline-info');
-const taskList = document.querySelector('.item');
+// let addNewTaskHTML = '' ;
+// const taskInput = document.querySelector('.mr-2');
+// const btn = document.querySelector('.btn-outline-info');
+// const taskList = document.querySelector('.item');
 
 
 
-function addTask(){
-  const task = taskInput.value.trim() ;
-   if (task !== '') {
-      const li = document.createElement('li') ;
-      li.className =  'list-group-item';  
-      li.textContent = task; 
-    taskList.appendChild(li);  
-    taskInput.value = '';    
-    console.log(alert('task added sussesfuly')) ;
-  }
- }
+// function addTask() {
+//   const task = taskInput.value.trim();
+//   if (task !== '') {
+//     const taskHTML = `
+//       <li class="list-group-item d-flex justify-content-between align-items-center">
+//         <span>${task}</span>
+//         <button type="button" class="btn btn-danger btn-sm delete-task">D</button>
+//       </li>
+//     `;
 
- btn.addEventListener('click', addTask);
-taskInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    addTask();
-  }
+//     taskList.innerHTML += taskHTML;
+//     taskInput.value = '';
+//     alert('Task added successfully');
+//   }
+// }
+// taskList.addEventListener('click', (e) => {
+//   if (e.target.classList.contains('delete-task')) {
+//     e.target.closest('li').remove();
+//   }
+// });
+
+
+
+//  btn.addEventListener('click', addTask);
+// taskInput.addEventListener('keydown', (e) => {
+//   if (e.key === 'Enter') {
+//     addTask();
+//   }
+// });
+
+
+
+
+//   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+//   const todayDate = new Date().toLocaleDateString('en-US', options);
+
+
+
+//  let i=1  ;
+// document.querySelector('.add-new-list-group').addEventListener('click', () => {
+//   const cardContainer = document.querySelector('.card-container');
+  
+  
+//     const today = new Date() ;
+//  today.setDate(today.getDate()+i) ;
+//  const day = today.toLocaleDateString('en-US', options);
+//  console.log(day);
+//   // Template for the card
+//   const cardHTML = `
+//     <div class="card text-bg-dark mb-3" style="width: 18rem;">
+//       <div class="card-header">${day}</div>
+//       <ul class="list-group list-group-flush">
+//         <li class="list-group-item d-flex justify-content-between align-items-center">
+//           <input type="text" class="form-control mr-2" placeholder="Enter a task">
+//           <button type="button" class="btn btn-outline-info">+</button>
+       
+//       </ul>
+//     </div>
+//   `;
+
+//   // Insert the card into the container
+//   cardContainer.insertAdjacentHTML('beforeend', cardHTML);
+//   i=i+1 ;
+// });
+
+
+// document.querySelectorAll('.card-header').forEach(header => {
+//   header.innerHTML = todayDate;
+// });
+
+//      document.querySelector('.todysDate').innerHTML  = todayDate ;
+    
+
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const todayDate = new Date().toLocaleDateString('en-US', options);
+document.querySelectorAll('.todysDate').forEach(el => {
+  el.innerHTML = todayDate;
 });
+document.querySelector('.card-header').innerHTML = todayDate;
+let i = 1;
 
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const todayDate = new Date().toLocaleDateString('en-US', options);
-
-
-
- let i=1  ;
 document.querySelector('.add-new-list-group').addEventListener('click', () => {
   const cardContainer = document.querySelector('.card-container');
-  
-  
-    const today = new Date() ;
- today.setDate(today.getDate()+i) ;
- const day = today.toLocaleDateString('en-US', options);
- console.log(day);
-  // Template for the card
+
+  const futureDate = new Date();
+  futureDate.setDate(futureDate.getDate() + i);
+  const day = futureDate.toLocaleDateString('en-US', options);
+  i++;
+
   const cardHTML = `
     <div class="card text-bg-dark mb-3" style="width: 18rem;">
       <div class="card-header">${day}</div>
@@ -66,14 +122,56 @@ document.querySelector('.add-new-list-group').addEventListener('click', () => {
     </div>
   `;
 
-  // Insert the card into the container
   cardContainer.insertAdjacentHTML('beforeend', cardHTML);
-  i=i+1 ;
 });
 
 
 
-    document.querySelector('.card-header').innerHTML  = todayDate ;
-     document.querySelector('.todysDate').innerHTML  = todayDate ;
-    
+document.querySelector('.card-container').addEventListener('click', (e) => {
   
+  if (e.target.matches('.btn-outline-info')) {
+    const card = e.target.closest('.card');
+    const taskInput = card.querySelector('.mr-2');
+    const taskList = card.querySelector('.item');
+    const task = taskInput.value.trim();
+
+    if (task !== '') {
+      const taskHTML = `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>${task}</span>
+          <button type="button" class="btn btn-danger btn-sm delete-task">D</button>
+        </li>
+      `;
+      taskList.innerHTML += taskHTML;
+      taskInput.value = '';
+      alert('Task added successfully');
+    }
+  }
+
+ 
+  if (e.target.classList.contains('delete-task')) {
+    e.target.closest('li').remove();
+  }
+});
+
+
+document.querySelector('.card-container').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.target.classList.contains('mr-2')) {
+    const card = e.target.closest('.card');
+    const taskInput = card.querySelector('.mr-2');
+    const taskList = card.querySelector('.item');
+    const task = taskInput.value.trim();
+
+    if (task !== '') {
+      const taskHTML = `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>${task}</span>
+          <button type="button" class="btn btn-danger btn-sm delete-task">D</button>
+        </li>
+      `;
+      taskList.innerHTML += taskHTML;
+      taskInput.value = '';
+      alert('Task added successfully');
+    }
+  }
+});

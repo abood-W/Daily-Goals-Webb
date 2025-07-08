@@ -51,7 +51,7 @@ document.querySelector('.card-container').addEventListener('click', (e) => {
       `;
       taskList.innerHTML += taskHTML;
       taskInput.value = '';
-      alert('Task added successfully');
+      
     }
   }
 
@@ -89,7 +89,7 @@ document.querySelector('.card-container').addEventListener('keydown', (e) => {
       `;
       taskList.innerHTML += taskHTML;
       taskInput.value = '';
-      alert('Task added successfully');
+     
     }
   }
 });

@@ -56,9 +56,13 @@ document.querySelector('.card-container').addEventListener('click', (e) => {
   }
 
  
-  if (e.target.classList.contains('delete-task')) {
-    e.target.closest('li').remove();
-  }
+ if (e.target.classList.contains('delete-task')) {
+        const confirmed = confirm('Are you sure you want to delete this task?');
+        if (confirmed) {
+            e.target.closest('li').remove();
+        }
+        }
+
 });
 
 
